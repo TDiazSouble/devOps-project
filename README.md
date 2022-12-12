@@ -86,7 +86,7 @@ login with "admin" and the password saved in "jenkinsPassword.txt" from previous
 
 ---------- CONFIGURE JENKINS  ----------
 
-click on Manage Jenkins --> Manage Plugins --> Download now and install after restart --> restart after no more jobs
+click on Manage Jenkins --> Manage Plugins --> Download now and install after restart --> Restart Jenkins when installation is complete and no jobs are running
 
 minikube dashboard 				--> we can see information about pods and information about jenkins in minikube
 
