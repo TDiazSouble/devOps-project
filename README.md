@@ -15,10 +15,6 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest
 
 sudo dpkg -i minikube_latest_amd64.deb
 
-- Set docker driver as default for minikube
-
-minikube config set driver docker
-
 - Install docker
 
 sudo apt install docker.io
@@ -49,6 +45,16 @@ sudo apt-get update
 
 sudo apt-get install -y kubectl
 
+---------- SETUP MINIKUBE ----------
+
+
+- Set docker driver as default for minikube
+
+minikube config set driver docker
+
+- Add your user to docker group
+
+sudo usermod -aG docker $USER && newgrp docker
 
 ---------- DEPLOY JENKINS ON MINIKUBE ----------
 
