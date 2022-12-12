@@ -72,16 +72,22 @@ helm show values jenkins/jenkins > jenkins.yaml
 
 helm install jenkins jenkins/jenkins  
 
-kubectl get pods -w 				--> para ver que este arrancando
+kubectl get pods -w 				--> Shows you how pods are initializing, when 2/2 are running you can continue with the next step
 
-kubectl exec --namespace jenkins -it svc/jenkins -c jenkins -- /bin/cat /run/secrets/additional/chart-admin-password && echo		--> admin password
+kubectl exec --namespace jenkins -it svc/jenkins -c jenkins -- /bin/cat /run/secrets/additional/chart-admin-password && echo	--> get the admin password
 	
-kubectl --namespace jenkins port-forward svc/jenkins 8000:8080		--> Para poder accecder a la terminal
+echo "copy+paste-password" > jenkinsPassword.txt	--> save the password for next steps
+	
+kubectl --namespace jenkins port-forward svc/jenkins 8000:8080		--> To access the terminal redirect your local port to the pod's port, the first port (8000) is the local port to access the pod and the second port (8080) is the port where the pod is listening
 
-abrir chrome y pegar http://localhost:8000/
+open firefox and go to: http://localhost:8000/		--> access jenkins ui
 
-logear con: admin y las password que nos generó
+login with "admin" and the password saved in "jenkinsPassword.txt" from previous steps
 
-minikube dashboard 				--> podemos ver que esta funcionando jenkins en minikube
+---------- CONFIGURE JENKINS  ----------
 
-install recommended drivers for jenkins
+click on Manage Jenkins --> Manage Plugins --> Download now and install after restart --> restart after no more jobs
+
+minikube dashboard 				--> we can see information about pods and information about jenkins in minikube
+
+
