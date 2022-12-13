@@ -109,6 +109,19 @@ minikube config set driver docker
 
 minikube start --cpus 4 --memory 6012           --> you can change parameters to set your own o leave blank for default
 
+- If you get an error with kubelet or "missing optional cgroups: blkio", try:
+
+sudo su
+
+nano /etc/default/grub
+
+In "GRUB_CMDLINE_LINUX" add "cgroup_enable=memory"
+
+You should have: GRUB_CMDLINE_LINUX_DEFAULT="quiet splash cgroup_enable=memory"
+
+update-grub2
+
+Reboot machine: reboot
 
 
 ---------- DEPLOY JENKINS ON MINIKUBE ----------
