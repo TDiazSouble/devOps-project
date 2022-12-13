@@ -107,12 +107,12 @@ Other systems and more info about this repo: https://github.com/ahmetb/kubectx#a
 
 minikube config set driver docker
 
+minikube start --cpus 4 --memory 6012           --> you can change parameters to set your own o leave blank for default
+
 
 
 ---------- DEPLOY JENKINS ON MINIKUBE ----------
 
-
-minikube start --cpus 4 --memory 6012           --> you can change parameters to set your own o leave blank for default
 
 kubectl create namespace jenkins
 
