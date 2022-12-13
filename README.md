@@ -40,14 +40,6 @@ chmod 700 get_helm.sh
 
 ./get_helm.sh
 
-- Install kubens
-
-For debian:
-
-sudo apt install kubectx
-
-Other systems and more info about this repo: https://github.com/ahmetb/kubectx#apt-debian
-
 - Install kubectl
 
 sudo apt-get install -y ca-certificates curl
@@ -61,6 +53,20 @@ echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://a
 sudo apt-get update
 
 sudo apt-get install -y kubectl
+
+- Install kubens
+
+For debian:
+
+sudo apt install kubectx
+
+Manually:
+
+sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
+sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
+sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+
+Other systems and more info about this repo: https://github.com/ahmetb/kubectx#apt-debian
 
 ---------- SETUP MINIKUBE ----------
 
