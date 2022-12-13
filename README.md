@@ -70,6 +70,8 @@ helm repo update
 
 helm show values jenkins/jenkins > jenkins.yaml
 
+nano jenkins.yaml --> modify line 129 "serviceType: NodePort"
+
 helm install jenkins jenkins/jenkins  
 
 kubectl get pods -w 				--> Shows you how pods are initializing, when 2/2 are running you can continue with the next step
