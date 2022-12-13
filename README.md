@@ -88,6 +88,14 @@ login with "admin" and the password saved in "jenkinsPassword.txt" from previous
 
 click on Manage Jenkins --> Manage Plugins --> Download now and install after restart --> Restart Jenkins when installation is complete and no jobs are running
 
-minikube dashboard 				--> we can see information about pods and information about jenkins in minikube
+---------- INFORMATION GATHERING ---------
+
+minikube addons enable metrics-server
+
+minikube dashboard 			--> we can see information about pods and information about jenkins in minikube
+
+minikube status 			--> check information about minikube running status
+
+kubectl get rc,services 		--> get repllication controllers and services
 
 
