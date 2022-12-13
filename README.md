@@ -9,7 +9,18 @@ open a terminal with crtl + alt + t
 
 sudo apt-get update && sudo apt-get upgrade
 
+sudo apt-get git
+sudo apt-get curl
+
 - Install minikube
+
+For ubuntu:
+
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+For debian:
 
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
 
