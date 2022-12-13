@@ -42,7 +42,11 @@ chmod 700 get_helm.sh
 
 - Install kubens
 
+For debian:
+
 sudo apt install kubectx
+
+Other systems and more info about this repo: https://github.com/ahmetb/kubectx#apt-debian
 
 - Install kubectl
 
