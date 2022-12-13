@@ -58,7 +58,7 @@ sudo usermod -aG docker $USER && newgrp docker
 
 ---------- DEPLOY JENKINS ON MINIKUBE ----------
 
-minikube start
+minikube start --cpus 4 --memory 6012 		--> yo can change parameters to set your own o leave blank for default
 
 kubectl create namespace jenkins
 
