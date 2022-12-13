@@ -141,7 +141,9 @@ nano jenkins.yaml --> modify line 129 "serviceType: NodePort"
 
 helm install -f jenkins.yaml jenkins jenkins/jenkins
 
-kubectl get pods -w 				--> Shows you how pods are initializing, when 2/2 are running you can continue with the next step
+kubectl get pods -w 				--> Shows you how pods are initializing
+
+When you see "jenkins-0  2/2  Running  0  2m5s" all your pods are running and you can continue with the next step
 
 kubectl exec --namespace jenkins -it svc/jenkins -c jenkins -- /bin/cat /run/secrets/additional/chart-admin-password && echo	--> get the admin password
 	
