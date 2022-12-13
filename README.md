@@ -103,12 +103,7 @@ Other systems and more info about this repo: https://github.com/ahmetb/kubectx#a
 ---------- SETUP MINIKUBE ----------
 
 
----- Set docker driver as default for minikube
-
-minikube config set driver docker
-
-minikube start --cpus 4 --memory 6012           --> you can change parameters to set your own o leave blank for default
-
+- Consider doing this step anyway to avoid errors with minikube in the future
 - If you get an error with kubelet or "missing optional cgroups: blkio", try:
 
 sudo su
@@ -122,6 +117,14 @@ You should have: GRUB_CMDLINE_LINUX_DEFAULT="quiet splash cgroup_enable=memory"
 update-grub2
 
 Reboot machine: reboot
+
+
+---- Set docker driver as default for minikube
+
+minikube config set driver docker
+
+minikube start --cpus 4 --memory 6012           --> you can change parameters to set your own o leave blank for default
+
 
 
 ---------- DEPLOY JENKINS ON MINIKUBE ----------
