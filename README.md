@@ -3,24 +3,28 @@
 
 ---------- SETUP ----------
 
-- First update the system:
+
+--- First update the system:
 
 open a terminal with crtl + alt + t
 
 sudo apt-get update && sudo apt-get upgrade
 
+Necessary tools:
+
 sudo apt-get git
 sudo apt-get curl
 
-- Install minikube
 
-For ubuntu:
+---- Install minikube
+
+- For ubuntu:
 
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
-For debian:
+- For debian:
 
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
 
@@ -28,11 +32,19 @@ sudo dpkg -i minikube_latest_amd64.deb
 
 Other systems and more information: https://minikube.sigs.k8s.io/docs/start/
 
-- Install docker
 
-sudo apt install docker.io
+---- Install docker
 
-- Install helm
+https://docs.docker.com/engine/install/
+
+add your user to user group: sudo usermod -aG docker $USER
+
+To test if docker is correctly installed: docker run hello-world
+
+if docker daemon error appears: systemctl start docker
+
+
+---- Install helm
 
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 
@@ -40,7 +52,12 @@ chmod 700 get_helm.sh
 
 ./get_helm.sh
 
-- Install kubectl
+- For information and other systems: https://helm.sh/docs/intro/install/
+
+
+---- Install kubectl
+
+- For debian:
 
 sudo apt-get install -y ca-certificates curl
 
@@ -54,7 +71,20 @@ sudo apt-get update
 
 sudo apt-get install -y kubectl
 
-- Install kubens
+- For ubuntu: 
+
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+- Test the install:
+
+kubectl version --client --output=yaml
+
+- For more info and other systems: https://kubernetes.io/docs/tasks/tools/
+
+
+---- Install kubens
 
 For debian:
 
@@ -68,18 +98,19 @@ sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
 
 Other systems and more info about this repo: https://github.com/ahmetb/kubectx#apt-debian
 
+
+
 ---------- SETUP MINIKUBE ----------
 
 
-- Set docker driver as default for minikube
+---- Set docker driver as default for minikube
 
 minikube config set driver docker
 
-- Add your user to docker group
 
-sudo usermod -aG docker $USER && newgrp docker
 
 ---------- DEPLOY JENKINS ON MINIKUBE ----------
+
 
 minikube start --cpus 4 --memory 6012           --> you can change parameters to set your own o leave blank for default
 
