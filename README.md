@@ -26,6 +26,8 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest
 
 sudo dpkg -i minikube_latest_amd64.deb
 
+Other systems and more information: https://minikube.sigs.k8s.io/docs/start/
+
 - Install docker
 
 sudo apt install docker.io
