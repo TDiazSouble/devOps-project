@@ -12,8 +12,7 @@ sudo apt-get update && sudo apt-get upgrade
 
 Necessary tools:
 
-sudo apt-get git
-sudo apt-get curl
+sudo apt-get install git curl -y
 
 
 ---- Install minikube
